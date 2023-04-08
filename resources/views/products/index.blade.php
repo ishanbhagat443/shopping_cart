@@ -41,9 +41,13 @@
                             <img style="width: 150px;" src="{{ asset('images/' . $product->image) }}" />
                         </td>
                         <td>
+
                             <a class="btn btn-info" href="{{ route('products.show', $product->id) }}">Show</a>
                             <a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">Edit</a>
-                            <a class="btn btn-danger" href="{{ route('products.destroy', $product->id) }}">Delete</a>
+                            <form action="{{ route('products.destroy', $product->id) }}" method="POST">@csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                             <a class="btn btn-warning" href="{{ route('add.to.cart', $product->id) }}">Add to Cart</a>
                         </td>
                     </tr>

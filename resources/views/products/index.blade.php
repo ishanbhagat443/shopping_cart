@@ -58,5 +58,5 @@
         </tbody>
     </table>
 
-    {!! $products->links() !!}
+    {!! $products->links('pagination::bootstrap-5') !!}
 @endsection
